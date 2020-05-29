@@ -1,1 +1,1 @@
-import 'aframe';
+console.info('...');

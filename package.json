@@ -32,6 +32,7 @@
     "clean:parcel": "rm -rf .parcel-cache || true",
     "clean": "npm run clean:html && npm run clean:js && npm run clean:map && npm run clean:parcel",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "push": "yarn build && git add . && git commit -m \"build\" && git push",
     "serve": "parcel serve src/index.html",
     "start": "serve ./docs",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
