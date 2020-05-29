@@ -2,7 +2,7 @@
   "name": "aframe",
   "version": "1.0.0",
   "description": "<!-- AUTO-GENERATED-CONTENT:START (STARTER) --> <p align=\"center\">   <a href=\"https://www.gatsbyjs.org\">     <img alt=\"Gatsby\" src=\"https://www.gatsbyjs.org/monogram.svg\" width=\"60\" />   </a> </p> <h1 align=\"center\">   Gatsby's default starter </h1>",
-  "browser": "docs/index.html",
+  "browser": "index.html",
   "browserslist": ["> 1%", "not dead"],
   "engines": {
     "node": ">=4.x"
@@ -25,9 +25,14 @@
   },
   "scripts": {
     "dev": "parcel watch src/index.html",
-    "serve": "parcel serve src/index.html",
-    "build": "rm -rf ./docs/*.* || true && parcel build src/index.html",
+    "build": "npm run clean && parcel build src/index.html",
+    "clean:html": "rm -rf ./index.html || true",
+    "clean:js": "rm -rf ./*.js || true",
+    "clean:map": "rm -rf ./*.js.map || true",
+    "clean:parcel": "rm -rf .parcel-cache || true",
+    "clean": "npm run clean:html && npm run clean:js && npm run clean:map && npm run clean:parcel",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "serve": "parcel serve src/index.html",
     "start": "serve ./docs",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
